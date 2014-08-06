@@ -15,8 +15,6 @@ security:
         chain_provider:
             chain :
                 providers: [in_memory, user_db]
-        userbundle: 
-            id: fos_user.user_provider.username
         user_db:
             entity: { class: AltageUserBundle:User, property: username }
         in_memory:
@@ -34,10 +32,8 @@ security:
             pattern:   ^/
             anonymous: ~
             form_login:
-                login_path: login
-                check_path: login_check
-                default_target_path: /app
-                use_referer: true
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
             logout:
                 path:   /logout
                 target: /
