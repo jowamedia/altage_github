@@ -32,8 +32,10 @@ security:
             pattern:   ^/
             anonymous: ~
             form_login:
-                provider: fos_userbundle
-                csrf_provider: form.csrf_provider
+                login_path: login
+                check_path: login_check
+                default_target_path: /app
+                use_referer: true
             logout:
                 path:   /logout
                 target: /
