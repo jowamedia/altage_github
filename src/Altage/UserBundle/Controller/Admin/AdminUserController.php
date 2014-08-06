@@ -61,11 +61,11 @@ class AdminUserController extends Controller
           // On vérifie que les valeurs entrées sont correctes
           // (Nous verrons la validation des objets en détail dans le prochain chapitre)
           if ($form->isValid()) {
-//            $factory = $this->get('security.encoder_factory');
-//            $user = new \Altage\UserBundle\Entity\User();
-//            $encoder = $factory->getEncoder($user);
-//            $password = $encoder->encodePassword(password, $user->getSalt());
-//            $user->setPassword($password);
+            $factory = $this->get('security.encoder_factory');
+            $user = new \Altage\UserBundle\Entity\User();
+            $encoder = $factory->getEncoder($user);
+            $password = $encoder->encodePassword(password, $user->getSalt());
+            $user->setPassword($password);
 
             // On l'enregistre notre objet $article dans la base de données
             $em = $this->getDoctrine()->getManager();

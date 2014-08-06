@@ -15,6 +15,8 @@ security:
         chain_provider:
             chain :
                 providers: [in_memory, user_db]
+        userbundle: 
+            id: fos_user.user_provider.username
         user_db:
             entity: { class: AltageUserBundle:User, property: username }
         in_memory:
