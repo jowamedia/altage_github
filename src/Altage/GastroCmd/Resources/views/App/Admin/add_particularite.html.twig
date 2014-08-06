@@ -1,0 +1,49 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+{% form_theme form 'AltageGastroCmd:Form:fields.html.twig' %}
+
+{#  Definition des routes d'edition et titres #}
+{% if app.request.get('_route') == '_AdminAddTexture' or app.request.get('_route') == '_AdminEditTexture' %}
+    {% set particulariteTitle = 'une Texture' %}
+{% elseif app.request.get('_route') == '_AdminAddRegime' or app.request.get('_route') == '_AdminEditRegime' %}
+    {% set particulariteTitle = 'un Regime' %}
+{% elseif app.request.get('_route') == '_AdminAddAllergie' or app.request.get('_route') == '_AdminEditAllergie' %}
+    {% set particulariteTitle = 'une Allergie' %}
+{% elseif app.request.get('_route') == '_AdminAddAversion' or app.request.get('_route') == '_AdminEditAversion' %}
+    {% set particulariteTitle = 'une Aversion' %}
+{% endif %}
+
+{% block title %}Ajout de {{ particulariteTitle }}  - {{ parent() }}{% endblock %}
+
+{% block main_content %}
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Administration
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								Ajouter {{ particulariteTitle }}
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<form method="post" {{ form_enctype(form) }} class="form-horizontal" role="form">
+								{{ form_widget(form) }}
+									<!-- #section:elements.form -->
+							<!-- PAGE CONTENT ENDS -->
+							</form>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+
+{% endblock %}
+{% block javascript %}
+		<script type="text/javascript">
+			jQuery(function($) { 
+
+ 			});
+		</script>
+{% endblock %}

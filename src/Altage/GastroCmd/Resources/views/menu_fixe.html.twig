@@ -1,0 +1,194 @@
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+					<span class="sr-only">Toggle sidebar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<img src="{{ asset('bundles/altagegastrocmd/images/altage_logo_small_white.png') }}">
+					</a>
+					<!-- /section:basics/navbar.layout.brand -->
+				</div>
+{% if is_granted('ROLE_ADMIN') %}
+        <div class="navbar-header pull-left">
+            afficher dropdown select des sites
+        </div>
+{% endif %}    
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="green">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-users"></i>
+								<small>Clients</small>
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{{ path('_AdminAddClient') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter un client
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispClient') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les clients
+									</a>
+								</li>
+							</ul>
+
+						</li>
+						<li class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-user-md"></i>
+								<small>Collaborateurs</small>
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{{ path('_AdminAddCollaborateur') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter un collaborateur
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispCollaborateur') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les collaborateurs
+									</a>
+								</li>
+							</ul>
+
+						</li>
+{% if is_granted('ROLE_ADMIN') %}
+						<li class="grey">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-user"></i>
+								<small>Sites</small>
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{{ path('_AdminAddUser') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter un Site
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispUser') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les Sites
+									</a>
+								</li>
+              </ul>
+            </li>
+						<li class="grey">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-cog"></i>
+								<small>Particularit&eacute;s</small>
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+              <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{{ path('_AdminAddTexture') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter une Texture
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispTexture') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les Textures
+									</a>
+								</li>
+								<li>
+									<a href="{{ path('_AdminAddRegime') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter un Regime
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispRegime') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les Regimes
+									</a>
+								</li>
+								<li>
+									<a href="{{ path('_AdminAddAllergie') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter une Allergie
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispAllergie') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les Allergies
+									</a>
+								</li>
+								<li>
+									<a href="{{ path('_AdminAddAversion') }}">
+										<i class="ace-icon fa fa-plus-square"></i>
+										Ajouter une Aversion
+									</a>
+								</li>
+
+								<li>
+									<a href="{{ path('_AdminDispAversion') }}">
+										<i class="ace-icon fa fa-edit"></i>
+										G&eacute;rer les Aversions
+									</a>
+								</li>
+							</ul>
+
+						</li>
+{% endif %}
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="{{ asset('bundles/altagegastrocmd/avatars/avatar2.png') }}" alt="Photo" />
+								<span class="user-info">
+									<small>Bienvenue,</small>
+                    {{ app.user.username }}
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="{{ path("logout") }}">
+										<i class="ace-icon fa fa-power-off"></i>
+										D&eacute;connexion
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+		<!-- /section:basics/navbar.layout -->
+		

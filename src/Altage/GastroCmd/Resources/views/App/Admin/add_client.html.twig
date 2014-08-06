@@ -1,0 +1,181 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+{% form_theme form 'AltageGastroCmd:Form:fields.html.twig' %}
+
+{% block title %} Ajouter un client - {{ parent() }}{% endblock %}
+
+{% block main_content %}
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Administration
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								Ajouter un client
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<form method="post" {{ form_enctype(form) }} class="form-horizontal" role="form">
+								{{ form_widget(form) }}
+								
+
+									<!-- #section:elements.form -->
+									<div class="col-sm-6">
+
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nom </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-1" placeholder="Nom de famille" class="col-xs-10 col-sm-5">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Pr&eacute;nom </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-2" placeholder="Pr&eacute;nom" class="col-xs-10 col-sm-5">
+											</div>
+										</div>										
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="id-date-picker-1"> Date d'entr&eacute;e </label>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy">
+													<span class="input-group-addon">
+														<i class="fa fa-calendar bigger-110"></i>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="id-date-picker-2"> Date de sortie </label>
+											<div class="col-sm-6">
+												<div class="input-group">
+													<input class="form-control date-picker" id="id-date-picker-2" type="text" data-date-format="dd-mm-yyyy">
+													<span class="input-group-addon">
+														<i class="fa fa-calendar bigger-110"></i>
+													</span>
+												</div>
+											</div>
+										</div>
+
+									</div>
+							
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-select-1"> Texture </label>
+										<div class="col-sm-9">
+											<select multiple="" class="chosen-select tag-input-style" id="form-field-select-1" data-placeholder="Choisir une texture...">
+												<option value="NO">Normal</option>
+												<option value="CC">Coup&eacute; au couteau</option>
+												<option value="VH">Viande hach&eacute;e</option>
+												<option value="HF">Hach&eacute; fin</option>
+												<option value="MI">Mix&eacute;</option>
+												<option value="TL">Tout lisse</option>
+												<option value="LI">Liquide</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-select-2"> Aversion </label>
+										<div class="col-sm-9">
+											<select multiple="" class="chosen-select tag-input-style" id="form-field-select-2" data-placeholder="Choisir une aversion...">
+												<option value="A1">Aversion 1</option>
+												<option value="A2">Aversion 2</option>
+												<option value="A3">Aversion 3</option>
+												<option value="A4">Aversion 4</option>
+												<option value="A5">Aversion 5</option>
+											</select>
+										</div>
+									</div>										
+								</div>	
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-select-3"> Regime </label>
+										<div class="col-sm-9">
+											<select multiple="" class="chosen-select tag-input-style" id="form-field-select-3" data-placeholder="Choisir un regime...">
+												<option value="SP">Sans porc</option>
+												<option value="SL">Sans lactose</option>
+												<option value="SO">Sans poisson</option>
+												<option value="SF">Sans fromage</option>
+												<option value="HY">Hypocalorique</option>
+												<option value="VE">v&eacute;g&eacute;tarien</option>
+												<option value="DI">Diab&eacute;tique</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-select-4"> Aversion </label>
+										<div class="col-sm-9">
+											<select multiple="" class="chosen-select tag-input-style" id="form-field-select-4" data-placeholder="Choisir une allergie...">
+												<option value="A1">Allergie 1</option>
+												<option value="A2">Allergie 2</option>
+												<option value="A3">Allergie 3</option>
+												<option value="A4">Allergie 4</option>
+												<option value="A5">Allergie 5</option>
+											</select>
+										</div>
+									</div>										
+								</div>
+								<div class="form-group"></div>
+
+
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info" type="button">
+											<i class="ace-icon fa fa-check bigger-110"></i>
+											Enregistrer
+										</button>
+
+										&nbsp; &nbsp; &nbsp;
+										<button class="btn" type="reset">
+											<i class="ace-icon fa fa-undo bigger-110"></i>
+											Reset
+										</button>
+									</div>
+								</div>
+							
+							<!-- #section:custom/extra.hr -->
+							<div class="hr hr32 hr-dotted"></div>
+							<!-- /section:custom/extra.hr -->
+
+							<!-- PAGE CONTENT ENDS -->
+							</form>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+
+{% endblock %}
+{% block javascript %}
+		<script type="text/javascript">
+			jQuery(function($) { 
+				 /*var mydate = $('#id-date-picker-1')[0];
+				 if(mydate.type !== 'date') {//if browser doesn't support "date" input
+				    $(mydate).datepicker({
+				      //options
+				    })
+				 }*/
+				//datepicker plugin
+				//link
+				$('.date-picker').datepicker({
+					autoclose: true,
+					todayHighlight: true
+				})
+				//show datepicker when clicking on the icon
+				.next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+				
+				$('.chosen-select').chosen({allow_single_deselect:true}); 
+				//resize the chosen on window resize
+				$(window).on('resize.chosen', function() {
+					var w = $('.chosen-select').parent().width();
+					$('.chosen-select').next().css({'width':w});
+				}).trigger('resize.chosen');
+ 			});
+		</script>
+{% endblock %}

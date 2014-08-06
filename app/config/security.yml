@@ -1,0 +1,45 @@
+# app/config/security.yml
+security:
+    encoders:
+        Altage\UserBundle\Entity\User: sha512
+        Symfony\Component\Security\Core\User\User: plaintext
+
+        
+    role_hierarchy:
+        ROLE_SECRETAIRE:    ROLE_SITE_USER
+        ROLE_CUISINE:   ROLE_SECRETAIRE
+        ROLE_ADMIN:  ROLE_CUISINE     
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+
+    providers:
+        chain_provider:
+            chain :
+                providers: [in_memory, user_db]
+        user_db:
+            entity: { class: AltageUserBundle:User, property: username }
+        in_memory:
+            memory:
+                users:
+                    user:  { password: 123456, roles: [ 'ROLE_SITE_USER' ] }
+                    admin: { password: 123456, roles: [ 'ROLE_ADMIN' ] }
+                    
+    firewalls:
+        login_firewall:
+            pattern:   ^/login$
+            anonymous: ~
+        secured_area:
+            pattern:   ^/
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+                default_target_path: /app
+                use_referer: true
+            logout:
+                path:   /logout
+                target: /
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/app, roles: ROLE_SITE_USER }
+#        - { path: ^/app/admin/add_user, roles: IS_AUTHENTICATED_ANONYMOUSLY }

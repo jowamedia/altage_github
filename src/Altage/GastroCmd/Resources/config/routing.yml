@@ -1,0 +1,88 @@
+_dashboard:
+    pattern:  /app/
+    defaults: { _controller: AltageGastroCmd:App:Dashboard }
+
+_cmdMenuApercu:
+    pattern:  /app/cmd_menu_apercu
+    defaults: { _controller: AltageGastroCmd:App:CmdMenuApercu }
+
+_cmdMenusForm:
+    pattern:  /app/cmd_menus_form/{date}/{am_pm}
+    defaults: { _controller: AltageGastroCmd:App:CmdMenusForm }
+
+_AdminAddClient:
+    pattern:  /app/admin/add_client
+    defaults: { _controller: AltageGastroCmd:Admin/AdminClient:AddClient }
+
+_AdminDispClient:
+    pattern:  /app/admin/disp_client
+    defaults: { _controller: AltageGastroCmd:Admin/AdminClient:DispClient }
+
+_AdminEditClient:
+    pattern:  /app/admin/edit_client/{id}
+    defaults: { _controller: AltageGastroCmd:Admin/AdminClient:EditClient }
+
+_AdminAddCollaborateur:
+    pattern:  /app/admin/add_collaborateur
+    defaults: { _controller: AltageGastroCmd:Admin/AdminCollaborateur:AddCollabo }
+
+_AdminDispCollaborateur:
+    pattern:  /app/admin/disp_collaborateur
+    defaults: { _controller: AltageGastroCmd:Admin/AdminCollaborateur:DispCollabo }
+
+_AdminEditCollaborateur:
+    pattern:  /app/admin/edit_collaborateur/{id}
+    defaults: { _controller: AltageGastroCmd:Admin/AdminCollaborateur:EditCollabo }
+
+_AdminAddSite:
+    pattern:  /app/admin/add_site
+    defaults: { _controller: AltageGastroCmd:Admin:AddSite }
+
+# Routes Particularités
+_AdminAddTexture:
+    pattern:  /app/admin/add_texture
+    defaults: { _controller: AltageGastroCmd:Admin/AdminTexture:AddTexture }
+
+_AdminDispTexture :
+    pattern:  /app/admin/disp_texture
+    defaults: { _controller: AltageGastroCmd:Admin/AdminTexture:DispTexture }
+ 
+_AdminEditTexture:
+    pattern:  /app/admin/edit_texture/{id}
+    defaults: { _controller: AltageGastroCmd:Admin/AdminTexture:EditTexture }
+   
+_AdminAddRegime:
+    pattern:  /app/admin/add_regime
+    defaults: { _controller: AltageGastroCmd:Admin/AdminRegime:AddRegime }
+
+_AdminDispRegime :
+    pattern:  /app/admin/disp_regime
+    defaults: { _controller: AltageGastroCmd:Admin/AdminRegime:DispRegime }
+ 
+_AdminEditRegime:
+    pattern:  /app/admin/edit_regime/{id}
+    defaults: { _controller: AltageGastroCmd:Admin/AdminRegime:EditRegime }
+    
+_AdminAddAllergie:
+    pattern:  /app/admin/add_allergie
+    defaults: { _controller: AltageGastroCmd:Admin/AdminAllergie:AddAllergie }
+
+_AdminDispAllergie :
+    pattern:  /app/admin/disp_allergie
+    defaults: { _controller: AltageGastroCmd:Admin/AdminAllergie:DispAllergie }
+ 
+_AdminEditAllergie:
+    pattern:  /app/admin/edit_Allergie/{id}
+    defaults: { _controller: AltageGastroCmd:Admin/AdminAllergie:EditAllergie }
+    
+_AdminAddAversion:
+    pattern:  /app/admin/add_aversion
+    defaults: { _controller: AltageGastroCmd:Admin/AdminAversion:AddAversion }
+
+_AdminDispAversion :
+    pattern:  /app/admin/disp_aversion
+    defaults: { _controller: AltageGastroCmd:Admin/AdminAversion:DispAversion }
+ 
+_AdminEditAversion:
+    pattern:  /app/admin/edit_Aversion/{id}
+    defaults: { _controller: AltageGastroCmd:Admin/AdminAversion:EditAversion }

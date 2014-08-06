@@ -1,0 +1,7 @@
+services:
+    acme.hello.menu.voter.request:
+        class: Altage\GastroCmd\Menu\RequestVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: knp_menu.voter }

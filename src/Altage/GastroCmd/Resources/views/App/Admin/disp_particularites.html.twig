@@ -1,0 +1,85 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+{% set particularites = particularite %}
+
+{#  Definition des routes d'edition et titres #}
+{% if app.request.get('_route') == '_AdminDispTexture' %}
+    {% set editPath = '_AdminEditTexture' %}
+    {% set particulariteTitle = 'Texture' %}
+{% elseif app.request.get('_route') == '_AdminDispRegime' %}
+    {% set editPath = '_AdminEditRegime' %}
+    {% set particulariteTitle = 'Regime' %}
+{% elseif app.request.get('_route') == '_AdminDispAllergie' %}
+    {% set editPath = '_AdminEditAllergie' %}
+    {% set particulariteTitle = 'Allergie' %}
+{% elseif app.request.get('_route') == '_AdminDispAversion' %}
+    {% set editPath = '_AdminEditAversion' %}
+    {% set particulariteTitle = 'Aversion' %}
+{% endif %}
+
+{% block title %}Gérer les {{ particulariteTitle }} - {{ parent() }} {% endblock %}
+
+{% block main_content %}
+    
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Administration
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								Gérer les {{ particulariteTitle }}
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-8">
+							<!-- PAGE CONTENT BEGINS -->
+							<div class="row">
+								<div class="col-xs-8">
+									<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th>Nom particularit&eacute;</th>
+												<th>couleur</th>
+												<th></th>
+											</tr>
+										</thead>
+
+										<tbody>
+                      {% for particularite in particularites %}
+											<tr>
+                        {% if particularite.nomTexture is defined %}
+                            <td>{{ particularite.nomTexture }}</td>
+                            <td style='background-color:{{ particularite.couleurTexture }}'>{{ particularite.couleurTexture }}</td>
+                        {% endif %}
+                        {% if particularite.nomRegime is defined %}
+                            <td>{{ particularite.nomRegime }}</td>
+                            <td style='background-color: {{ particularite.couleurRegime }}'>{{ particularite.couleurRegime }}</td>
+                        {% endif %}
+                        {% if particularite.nomAllergie is defined %}
+                            <td>{{ particularite.nomAllergie }}</td>
+                            <td style='background-color:{{ particularite.couleurAllergie }}'>{{ particularite.couleurAllergie }}</td>
+                        {% endif %}
+                        {% if particularite.nomAversion is defined %}
+                            <td>{{ particularite.nomAversion }}</td>
+                            <td style='background-color:{{ particularite.couleurAversion }}'>{{ particularite.couleurAversion }}</td>
+                        {% endif %}
+                        <td>
+													<div class="hidden-sm hidden-xs btn-group">
+														<a href="{{ path(editPath, { 'id': particularite.id } ) }}">
+															<button class="btn btn-xs btn-info">
+																<i class="ace-icon fa fa-pencil bigger-120"></i>
+															</button>
+														</a>														
+													</div>
+												</td>
+											</tr>
+                      {% endfor %}
+										</tbody>
+									</table>
+								</div><!-- /.span -->
+							</div><!-- /.row -->
+            </div><!-- /.page-content -->
+          </div><!-- /.main-content -->
+        </div>
+{% endblock %}

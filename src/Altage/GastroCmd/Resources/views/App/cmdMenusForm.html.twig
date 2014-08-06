@@ -1,0 +1,353 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+
+{% block title %}Commander des menus - {{ parent() }} {% endblock %}
+
+{% block main_content %}
+
+				<div class="page-content">
+					<!-- #section:settings.box -->
+					<!-- /section:settings.box -->
+					<div class="page-header">
+						<h1>
+							Commande des menus
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								midi (ou soir)
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+								<!-- #section:pages/pricing.small-body -->
+								<h4 class="row header smaller lighter blue">
+								    <div class="col-sm-3">
+                                        <span class="label label-primary arrowed arrowed-in-right"> 18 </span>
+                                            <small>mercredi 19 mars 2014</small>
+                                        <span class="label label-primary arrowed-right arrowed-in"> 20 </span>
+                                    </div>
+								    <span class="col-sm-3">
+								    	Midi (ou soir)
+                                        <!--div data-toggle="buttons" class="btn-group">
+											<label class="btn btn-primary active">
+												<input type="radio" value="2">
+												<i class="icon-only ace-icon fa fa-adjust"></i> midi</label>
+
+											<label class="btn btn-primary">
+												<input type="radio" value="3">
+												<i class="icon-only ace-icon fa fa-circle"></i> soir
+											</label>
+										</div-->
+                                    </span>
+                                    <span class="col-sm-6">
+                                        Semaine 12 - lundi 17 au dimanche 23 mars 2014
+                                    </span>
+                                </h4>
+                           </div>
+                        </div>
+						<form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                    <div class="col-xs-12 col-sm-6">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">
+													<i class="ace-icon fa fa-users"></i>
+													Clients
+												</h4>
+												<div class="widget-toolbar">
+												    <span id="numberOfChecked1">0</span> &nbsp;repas
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div>
+                                                        <label>
+                                                            <input name="select-all-client-checkbox" id="select_clients"  type="checkbox" class="ace">
+                                                            <span class="lbl"> S&eacute;lectionner / d&eacute;s&eacute;lectionner tous les clients</span>
+                                                        </label>
+													</div>
+
+													<hr>
+
+													<!-- #section:plugins/input.limiter -->
+                                                    <div class="control-group">
+
+                                                        <!-- #section:custom/checkbox -->
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="client-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Jean Dupont</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="client-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Josiane Tabasco</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="client-checkbox" class="ace ace-checkbox-2" type="checkbox">
+                                                                <span class="lbl"> Michel Donner</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label class="block">
+                                                                <input name="client-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Michael Schumi</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="client-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Jean Dupont</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="client-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Josiane Tabasco</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="client-checkbox" class="ace ace-checkbox-2" type="checkbox">
+                                                                <span class="lbl"> Michel Donner</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label class="block">
+                                                                <input name="client-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Michael Schumi</span>
+                                                            </label>
+                                                        </div>
+                                                        <!-- /section:custom/checkbox -->
+                                                    </div>
+
+
+
+													<!-- /section:plugins/input.autosize -->
+												</div>
+											</div>
+										</div>
+									</div>
+
+                                    <div class="col-xs-12 col-sm-6">
+										<div class="widget-box">
+											<div class="widget-header">
+												<h4 class="widget-title">
+													<i class="ace-icon fa fa-user-md"></i>
+													Collaborateurs
+												</h4>
+
+												<div class="widget-toolbar">
+												    <span id="numberOfChecked2">0</span> &nbsp;repas
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div>
+                                                        <label>
+                                                            <input name="select-all-collabo-checkbox" id="select_collabo" type="checkbox" class="ace">
+                                                            <span class="lbl"> S&eacute;lectionner / d&eacute;s&eacute;lectionner tous les clients</span>
+                                                        </label>
+													</div>
+
+													<hr>
+
+													<!-- #section:plugins/input.limiter -->
+                                                    <div class="control-group">
+
+                                                        <!-- #section:custom/checkbox -->
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="collabo-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Jean Dupont</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="collabo-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Josiane Tabasco</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="collabo-checkbox" class="ace ace-checkbox-2" type="checkbox">
+                                                                <span class="lbl"> Michel Donner</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label class="block">
+                                                                <input name="collabo-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Michael Schumi</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="collabo-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Jean Dupont</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="collabo-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Josiane Tabasco</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input name="collabo-checkbox" class="ace ace-checkbox-2" type="checkbox">
+                                                                <span class="lbl"> Michel Donner</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label class="block">
+                                                                <input name="collabo-checkbox" type="checkbox" class="ace">
+                                                                <span class="lbl"> Michael Schumi</span>
+                                                            </label>
+                                                        </div>
+
+                                                        <!-- /section:custom/checkbox -->
+                                                    </div>
+
+													<!-- /section:plugins/input.autosize -->
+											</div>
+										</div>
+									</div>
+								</div>
+						    </div><!-- /.col -->
+						 </div> <!-- /.row -->
+						<hr>
+                        <div class="row">
+                        	<div class="col-xs-12">
+	                        	<div class="col-xs-12 col-sm-6">
+									<div class="widget-box">
+									   <div class="widget-header">
+										   <h4 class="widget-title smaller">
+										   	<i class="ace-icon glyphicon glyphicon-glass"></i>
+										   	Sp&eacute;cial
+										   </h4>
+									   </div>
+									   <div class="widget-body">
+										   <div class="widget-main">
+		                                        <fieldset>
+			                                        <label for="form-field-select-1">Commande de repas sp&eacute;ciaux</label>
+				                                        <select class="form-control" id="form-field-select-1">
+				                                            <option value="0" selected>aucun</option>
+				                                            <option value="1">Repas sp&eacute;cial</option>
+				                                            <option value="2">Salade + Dessert</option>
+				                                            <option value="3">Dessert seul</option>
+				                                            <option value="4">Viande seule</option>
+				                                            <option value="5">Atelier</option>
+				                                        </select>
+		                                        </fieldset>
+		                                        <span class="help-block">Les repas sp&eacute;ciaux sont pour l'ensemble des repas de cette commande. Veuillez saisir les clients, collaborateurs et &eacute;ventuellement, visiteurs.</span>
+										   </div>
+										</div>
+									</div>
+								</div> 
+	                        	<div class="col-xs-12 col-sm-6">
+									<div class="widget-box">
+									   <div class="widget-header">
+
+										   <h4 class="widget-title smaller">
+	   										   <i class="ace-icon fa fa-cutlery"></i>
+	   										   Nombre de visiteurs
+										   	</h4>
+									   </div>
+									   <div class="widget-body">
+										   <div class="widget-main">
+										   		<div class="clearfix">
+											   		<label for="spinner">S&eacute;lectionnez le nombre de visiteurs</label>
+										   		</div>
+												<input type="text" class="input-mini" id="spinner" />
+												<span class="help-block">Les visiteurs recevront un menu de texture normale.</span>	
+										   </div>
+										</div>
+									</div>
+								</div>	
+                        	</div><!-- /.col -->						
+                        </div> <!-- /.row -->
+                        <div class="row">
+                        	
+                        	<div class="clearfix form-actions">
+                                <div class="col-xs-12 col-sm-6">
+                                	<p class="alert alert-success">
+										<strong>Nombre de repas r&eacute;serv&eacute;s : &nbsp;<span id="total_repas">0</span></strong>
+									</p>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+
+                                    <button class="btn btn-info" type="button">
+                                        <i class="ace-icon fa fa-check bigger-110"></i>
+                                        Enregistrer
+                                    </button>
+                                </div><!-- /.col -->
+                        	</div>
+                        	
+                        </div>  <!-- /.row -->
+						</form>
+								<!-- /section:pages/pricing.small-body -->
+
+							<!-- PAGE CONTENT ENDS -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+{% endblock %}
+{% block javascript %}
+		<script type="text/javascript">
+			function displayTotal() {
+				//Display number of repas for clients
+				var numberOfChecked1 = $("input[name='client-checkbox']:checked").length;
+				$('#numberOfChecked1').html(numberOfChecked1);
+				//Display number of repas for collaborateurs				
+				var numberOfChecked2 = $("input[name='collabo-checkbox']:checked").length;
+				$('#numberOfChecked2').html(numberOfChecked2);
+				//transformer la valeur input text spinner en nombre et ajouter au total
+				var repas_visiteurs = parseInt($('#spinner').val());
+				var total_repas = numberOfChecked1+numberOfChecked2+repas_visiteurs;
+				$('#total_repas').html(total_repas);			
+			}
+
+            $(document).ready(function() {
+				//select all clients checkboxes et affiche le total
+	          $("#select_clients").click(function() {
+	            $("input[name='client-checkbox']").prop("checked", $(this).prop("checked"));
+				displayTotal();
+	          });
+				//select all collaborateurs checkboxes et affiche le total
+	          $("#select_collabo").click(function() {
+	            $("input[name='collabo-checkbox']").prop("checked", $(this).prop("checked"));
+				displayTotal();
+	          });  
+	          //detect change on form elements et afficher total
+				$("input").change( displayTotal );
+				$("select").change( displayTotal );
+				//displayTotal();
+				
+            }); //End document.ready fnc
+
+			jQuery(function($) {            
+				//spinner
+				$('#spinner').ace_spinner({value:0,min:0,max:1000,step:1, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up', icon_down:'ace-icon fa fa-caret-down'});
+			});
+
+		</script>
+{% endblock %}

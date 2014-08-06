@@ -1,0 +1,14 @@
+# AltageGastrocmd routes (to be removed)
+_altage_gcmd:
+    resource: "@AltageGastroCmd/Resources/config/routing.yml"
+
+_altage_usrbdl:
+    resource: "@AltageUserBundle/Resources/config/routing.yml"
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /app
+        permanent: true
+    

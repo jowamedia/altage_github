@@ -1,0 +1,318 @@
+<?php
+
+namespace Altage\GastroCmd\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+// use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Client")
+ */
+class Client
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer", nullable=false)
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
+
+// Association Mapping: http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
+// Pour associer le champ siteId avec 
+  
+	/**
+	 * @ORM\Column(type="string", length=40)
+	 * @Assert\NotBlank()
+	 */
+	protected $lastName;
+	
+	/**
+	 * @ORM\Column(type="string", length=40)
+	 * @Assert\NotBlank()
+	 */
+	protected $firstName;
+
+	/**
+	 * @ORM\Column(type="date")
+	 * @Assert\NotBlank()
+	 */
+	protected $entryDate;
+	
+	/**
+	 * @ORM\Column(type="date", nullable=true)
+	 */
+	protected $leaveDate;
+	
+	/**
+	 * @ORM\Column(name="is_active", type="boolean")
+	 */
+	private $isActive;
+
+  /**
+   * @ORM\ManyToMany(targetEntity="Altage\GastroCmd\Entity\Texture", cascade={"persist"})
+   */
+  private $texture;
+  
+   /**
+   * @ORM\ManyToMany(targetEntity="Altage\GastroCmd\Entity\Regime", cascade={"persist"})
+   */
+  private $regime; 
+  
+   /**
+   * @ORM\ManyToMany(targetEntity="Altage\GastroCmd\Entity\Allergie", cascade={"persist"})
+   */
+  private $allergie; 
+  
+   /**
+   * @ORM\ManyToMany(targetEntity="Altage\GastroCmd\Entity\Aversion", cascade={"persist"})
+   */
+  private $aversion; 
+  
+   /**
+   * @ORM\ManyToMany(targetEntity="Altage\UserBundle\Entity\User", cascade={"persist"})
+   */
+  private $user;
+  
+
+	/**
+	 * Get id
+	 * @return integer
+	 */
+		public function getId()
+	{
+		return $this->id;
+	}
+
+  /**
+	 * Get idSite
+	 * @return integer
+	 */
+	public function getSiteId()
+	{
+		return $this->siteId;
+	}
+	public function setSiteId($siteId)
+	{
+        $this->siteId = $siteId;
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getLastName()
+	{
+		return $this->lastName;
+	}	
+
+	public function setLastName($lastName)
+	{
+		$this->lastName = $lastName;
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getFirstName()
+	{
+		return $this->firstName;
+	}
+
+	public function setFirstName($firstName)
+	{
+		$this->firstName = $firstName;
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getEntryDate()
+	{
+		return $this->entryDate;
+	}
+
+	public function setEntryDate($entryDate)
+	{
+		$this->entryDate = $entryDate;
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getLeaveDate()
+	{
+		return $this->leaveDate;
+	}
+
+	public function setLeaveDate($leaveDate)
+	{
+		$this->leaveDate = $leaveDate;
+	}
+	
+	/**
+	 * Set isActive
+	 * @param boolean $isActive
+	 * @return User
+	 */
+	public function setIsActive($isActive)
+	{
+		$this->isActive = $isActive;
+	
+		return $this;
+	}
+	
+	/**
+	 * Get isActive
+	 * @return boolean
+	 */
+	public function getIsActive()
+	{
+		return $this->isActive;
+	}
+
+    /**
+     * Add texture
+     *
+     * @param \Altage\GastroCmd\Entity\Texture $texture
+     * @return Client
+     */
+    public function addTexture(\Altage\GastroCmd\Entity\Texture $texture)
+    {
+        $this->texture[] = $texture;
+
+        return $this;
+    }
+
+    /**
+     * Remove texture
+     *
+     * @param \Altage\GastroCmd\Entity\Texture $texture
+     */
+    public function removeTexture(\Altage\GastroCmd\Entity\Texture $texture)
+    {
+        $this->texture->removeElement($texture);
+    }
+
+    /**
+     * Get texture
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTexture()
+    {
+        return $this->texture;
+    }
+
+    /**
+     * Add regime
+     *
+     * @param \Altage\GastroCmd\Entity\Regime $regime
+     * @return Client
+     */
+    public function addRegime(\Altage\GastroCmd\Entity\Regime $regime)
+    {
+        $this->regime[] = $regime;
+
+        return $this;
+    }
+
+    /**
+     * Remove regime
+     *
+     * @param \Altage\GastroCmd\Entity\Regime $regime
+     */
+    public function removeRegime(\Altage\GastroCmd\Entity\Regime $regime)
+    {
+        $this->regime->removeElement($regime);
+    }
+
+    /**
+     * Get regime
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRegime()
+    {
+        return $this->regime;
+    }
+
+    /**
+     * Add allergie
+     *
+     * @param \Altage\GastroCmd\Entity\Allergie $allergie
+     * @return Client
+     */
+    public function addAllergie(\Altage\GastroCmd\Entity\Allergie $allergie)
+    {
+        $this->allergie[] = $allergie;
+
+        return $this;
+    }
+
+    /**
+     * Remove allergie
+     *
+     * @param \Altage\GastroCmd\Entity\Allergie $allergie
+     */
+    public function removeAllergie(\Altage\GastroCmd\Entity\Allergie $allergie)
+    {
+        $this->allergie->removeElement($allergie);
+    }
+
+    /**
+     * Get allergie
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAllergie()
+    {
+        return $this->allergie;
+    }
+
+    /**
+     * Add aversion
+     *
+     * @param \Altage\GastroCmd\Entity\Aversion $aversion
+     * @return Client
+     */
+    public function addAversion(\Altage\GastroCmd\Entity\Aversion $aversion)
+    {
+        $this->aversion[] = $aversion;
+
+        return $this;
+    }
+
+    /**
+     * Remove aversion
+     *
+     * @param \Altage\GastroCmd\Entity\Aversion $aversion
+     */
+    public function removeAversion(\Altage\GastroCmd\Entity\Aversion $aversion)
+    {
+        $this->aversion->removeElement($aversion);
+    }
+
+    /**
+     * Get aversion
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAversion()
+    {
+        return $this->aversion;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->entryDate    = new \DateTime;
+        $this->isActive     = true;
+        $this->texture = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->regime = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->allergie = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->aversion = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+}

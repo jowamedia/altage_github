@@ -1,0 +1,158 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+
+{% block title %}Tableau de bord - {{ parent() }}{% endblock %}
+
+{% block main_content %}
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Tableau de bord
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								aper&ccedil;u en un coup d'oeil
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+						<!-- PAGE CONTENT BEGINS -->
+							<!-- Alert messages -->
+							<div class="alert alert-block alert-success">
+								<button type="button" class="close" data-dismiss="alert">
+									<i class="ace-icon fa fa-times"></i>
+								</button>
+								<i class="ace-icon fa fa-check green"></i>
+								Bienvenue &agrave;
+								<strong class="green">
+									GastroCommande
+								</strong>, l'application de gestion des menus pour le groupe altage.
+							</div><!-- /.alerte message -->
+
+							<div class="row">
+								<div class="space-6"></div>
+								<div class="col-sm-9 infobox-container">
+									<!-- #section:pages/dashboard.infobox -->
+									<div class="infobox infobox-green">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-users"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">35</span>
+											<div class="infobox-content">Clients</div>
+										</div>
+
+										<!-- #section:pages/dashboard.infobox.stat -->
+
+										<!-- /section:pages/dashboard.infobox.stat -->
+									</div>
+									<div class="infobox infobox-red">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-cutlery"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">38</span>
+											<div class="infobox-content">Repas &agrave; midi</div>
+										</div>
+									</div>
+
+									<div class="infobox infobox-pink">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-cutlery"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">32</span>
+											<div class="infobox-content">Repas demain midi</div>
+										</div>
+									</div>
+									<div class="infobox infobox-blue3">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-cutlery"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">32</span>
+											<div class="infobox-content">Repas mardi midi</div>
+										</div>
+										<div class="badge badge-success">
+											&nbsp;J-3&nbsp;
+										</div>
+									</div>
+									<div class="infobox infobox-blue">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-user-md"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">6</span>
+											<div class="infobox-content">Collaborateurs</div>
+										</div>
+									</div>
+
+
+									<div class="infobox infobox-orange2">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-cutlery"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">38</span>
+											<div class="infobox-content">Repas ce soir</div>
+										</div>
+									</div>
+									<div class="infobox infobox-purple">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-cutlery"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">12</span>
+											<div class="infobox-content">Repas demain soir</div>
+										</div>
+									</div>
+									<div class="infobox infobox-blue2">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-cutlery"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">12</span>
+											<div class="infobox-content">Repas mardi soir</div>
+										</div>
+										<div class="badge badge-success">
+											&nbsp;J-3&nbsp;
+										</div>
+									</div>
+									<!-- /section:pages/dashboard.infobox -->
+									<div class="space-6"></div>
+
+									<!-- #section:pages/dashboard.infobox.dark -->
+
+									<!-- /section:pages/dashboard.infobox.dark -->
+								</div>
+
+								<div class="vspace-12-sm"></div>
+
+								<div class="col-sm-5">
+									
+								</div><!-- /.col -->
+							</div><!-- /.row -->
+
+							<!-- #section:custom/extra.hr -->
+							<div class="hr hr32 hr-dotted"></div>
+							<!-- /section:custom/extra.hr -->
+
+							<div class="hr hr32 hr-dotted"></div>
+
+
+
+							<!-- PAGE CONTENT ENDS -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+
+{% endblock %}

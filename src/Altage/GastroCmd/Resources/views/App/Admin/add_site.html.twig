@@ -1,0 +1,116 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+
+{% block title %}Ajouter un site  - {{ parent() }}{% endblock %}
+
+{% block main_content %}
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Administration
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								Ajouter un site
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<form class="form-horizontal" role="form">
+								
+									<!-- #section:elements.form -->
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nom du site </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-1" placeholder="Sans-Soucis" class="col-xs-10 col-sm-5">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Nom de login </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-2" placeholder="soucis" class="col-xs-10 col-sm-5">
+											</div>
+										</div>										
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> Mot de passe </label>
+											<div class="col-sm-9">
+												<input type="password" id="form-field-3" placeholder="123456$Abcd" class="col-xs-10 col-sm-5">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-email"> Email </label>
+											<div class="col-sm-9">
+												<input type="password" id="form-email" placeholder="info@altage.ch" class="col-xs-10 col-sm-5">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> Adresse </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-4" placeholder="rue de l'H&ocirc;pital 31" class="col-xs-10 col-sm-5">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> NPA </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-5" placeholder="1400" class="col-xs-10 col-sm-5">
+											</div>
+										</div>							
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> Ville </label>
+											<div class="col-sm-9">
+												<input type="text" id="form-field-5" placeholder="Yverdon-les-Bains" class="col-xs-10 col-sm-5">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-mask-2">T&eacute;l&eacute;phone</label>
+											<div class="col-sm-9">
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="ace-icon fa fa-phone"></i>
+													</span>
+													<input class="col-xs-10 col-sm-5 input-mask-phone" type="text" id="form-field-mask-2" />
+												</div>
+											</div>
+										</div>
+
+								<div class="form-group"></div>
+
+
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info" type="button">
+											<i class="ace-icon fa fa-check bigger-110"></i>
+											Enregistrer
+										</button>
+
+										&nbsp; &nbsp; &nbsp;
+										<button class="btn" type="reset">
+											<i class="ace-icon fa fa-undo bigger-110"></i>
+											Reset
+										</button>
+									</div>
+								</div>
+							
+							<!-- #section:custom/extra.hr -->
+							<div class="hr hr32 hr-dotted"></div>
+							<!-- /section:custom/extra.hr -->
+
+							<!-- PAGE CONTENT ENDS -->
+							</form>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+				
+{% endblock %}
+{% block javascript %}
+		<script type="text/javascript">
+			jQuery(function($) { 
+
+				$.mask.definitions['~']='[+-]';
+				$('.input-mask-phone').mask('999 999-99-99');
+
+ 			});
+		</script>
+{% endblock %}

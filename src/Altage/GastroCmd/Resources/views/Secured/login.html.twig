@@ -1,0 +1,106 @@
+{% extends 'AltageGastroCmd::html_base_layout.html.twig' %}
+
+{% block style %}
+	<style type="text/css">
+		.main-content { 
+			margin-left: 0px;
+			margin-top: 0px;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+		<div class="main-container">
+			<div class="main-content">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div class="login-container">
+						  <div class="center">
+							<h1><img src="{{ asset('bundles/altagegastrocmd/images/altage_logo.jpg') }}" width="50%" height="50%"></h1>
+							<h4 class="blue" id="id-company-text">&copy; GastroCommande</h4>
+						  </div>
+						  <div class="space-6"></div><!-- optional space -->
+						  <div class="position-relative"><!-- a position relative container -->
+							 <div class="login-box visible widget-box" id="login-box">
+								<div class="widget-body">
+									<div class="widget-main">
+										<h4 class="header blue lighter bigger">
+											<i class="ace-icon fa fa-sign-in green"></i>
+											Veuillez saisir vos informations
+										</h4>
+									<div class="space-6"></div>
+									 <form action="{{ path("_security_check") }}" method="post" class="form-horizontal" role="form">
+											<fieldset>
+												<label class="block clearfix">
+													<span class="block input-icon input-icon-right">
+														<input type="text" name="_username" value="{{ last_username }}" id="user" class="form-control" placeholder="Utilisateur" />
+														<i class="ace-icon fa fa-user"></i>
+													</span>
+												</label>
+
+												<label class="block clearfix">
+													<span class="block input-icon input-icon-right">
+														<input type="password" name="_password" class="form-control" placeholder="Mot de passe" />
+														<i class="ace-icon fa fa-lock"></i>
+													</span>
+												</label>
+
+												<div class="space"></div>
+
+												<div class="clearfix">
+
+													<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+														<i class="ace-icon fa fa-key"></i>
+														<span class="bigger-110">Login</span>
+													</button>
+												</div>
+
+												<div class="space-4"></div>
+											</fieldset>
+									 </form>
+									</div>
+								</div>
+							 </div>
+
+							 <div class="forgot-box widget-box no-border" id="forgot-box">
+								<!-- forgot area -->
+							 </div>
+
+							 <div class="signup-box widget-box no-border" id="signup-box">
+								<!-- signup area -->
+							 </div>
+						  </div>
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+{% endblock %}
+{% block javascript %}
+		<script type="text/javascript">
+			$(function(){
+				$("#user").focus();
+			});
+			
+			jQuery(function($) {
+			 $(document).on('click', '.toolbar a[data-target]', function(e) {
+			  e.preventDefault();
+			  var target = $(this).data('target');
+			  $('.widget-box.visible').removeClass('visible');//hide others
+			  $(target).addClass('visible');//show target
+			 });
+			});
+			
+			$(function() {
+			  $('form').submit(function(){
+				$.post('dashboard.html', function() {
+				  window.location = 'dashboard.html';
+				});
+				return false;
+			  });
+			});
+		</script>
+{% endblock %}
+
+
+{% set code = code(_self) %}

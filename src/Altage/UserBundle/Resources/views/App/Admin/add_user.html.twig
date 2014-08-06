@@ -1,0 +1,57 @@
+{% extends 'AltageGastroCmd::app_layout.html.twig' %}
+{% form_theme form 'AltageGastroCmd:Form:fields.html.twig' %}
+
+{% block title %} Ajouter un user - {{ parent() }}{% endblock %}
+
+{% block main_content %}
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Administration
+							<small>
+								<i class="ace-icon fa fa-angle-double-right"></i>
+								Ajouter un user
+							</small>
+						</h1>
+					</div><!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<form method="post" {{ form_enctype(form) }} class="form-horizontal" role="form">
+								{{ form_widget(form) }}
+								
+
+
+
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button type="submit" class="btn btn-info" type="button">
+											<i class="ace-icon fa fa-check bigger-110"></i>
+											Enregistrer
+										</button>
+
+										&nbsp; &nbsp; &nbsp;
+										<button type="reset" class="btn" type="reset">
+											<i class="ace-icon fa fa-undo bigger-110"></i>
+											Reset
+										</button>
+									</div>
+								</div>
+
+
+							<!-- PAGE CONTENT ENDS -->
+							</form>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+
+{% endblock %}
+{% block javascript %}
+		<script type="text/javascript">
+			jQuery(function($) { 
+
+ 			});
+		</script>
+{% endblock %}

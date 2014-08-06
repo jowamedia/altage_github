@@ -1,0 +1,62 @@
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="{{ path('_dashboard') }}">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Tableau de bord </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="{{ path('_cmdMenuApercu') }}">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> Commande menus </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="#">
+							<i class="menu-icon fa fa-eye"></i>
+							<span class="menu-text">
+								Voir les menus
+								<!-- #section:basics/sidebar.layout.badge -->
+								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
+									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+								</span>
+								<!-- /section:basics/sidebar.layout.badge -->
+							</span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="">
+						<a href="#">
+							<i class="menu-icon fa fa-bar-chart-o"></i>
+							<span class="menu-text"> Rapports </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="desabled">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-ban"></i>
+							<span class="menu-text"> autres modules </span>
+						</a>
+					</li>
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->

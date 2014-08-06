@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset0 Cambria;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17160\viewh16880\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+
+\b \ul Utilisation de GIT pour Yoann
+\b0 \ulnone \
+\
+
+\b Eclipse Symfony:
+\b0 \
+{\field{\*\fldinst{HYPERLINK "http://symfony.dubture.com/"}}{\fldrslt http://symfony.dubture.com/}}\
+\
+\pard\pardeftab720
+
+\f1\b\fs22 \cf0 Eclipse Standard/SDK\
+Version: Kepler Service Release 2
+\f0\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0 \cf0 \
+\pard\pardeftab708\ri-386
+
+\f2 \cf0 Principes de base\'a0:\
+Compr\'e9hension\'a0: {\field{\*\fldinst{HYPERLINK "%22"}}{\fldrslt \cf2 \ul \ulc2 http://ndpsoftware.com/git-cheatsheet.html#loc=workspace}}; \
+{\field{\*\fldinst{HYPERLINK "%22"}}{\fldrslt \cf2 \ul \ulc2 http://classic.scottr.org/presentations/git-in-5-minutes/}} \
+\
+
+\b R\'e9cup\'e9rer un projet GIT (avec un Terminal)
+\b0 :\
+\
+On cr\'e9\'e9 un nouveau r\'e9pertoire:\
+	$ mkdir /local/r\'e9pertoire projet/\
+On se rend \'e0 ce r\'e9pertoire:\
+	$ cd /local/r\'e9pertoire projet/\
+On copie le projet GIT:\
+\pard\pardeftab708\ri-1400
+\cf0 	$ git clone ssh://gityoann@jowamedia.synology.me:23/volume1/web/git/altage.git\
+\
+\pard\pardeftab708\ri-386
+\cf0 (afin d\'92\'e9viter les attaques SSH sur le port 22, j\'92ai fait une redirection du port 23 externe sur le 22 en interne)\
+\
+V\'e9rifier la synchronisation avec le GIT Server:\
+	$ git remote -v\
+\
+Si rien:\
+Ajouter la synchronisation du repertoire GIT local avec le serveur GIT (chez Jo\'ebl):\
+\pard\pardeftab708\ri-2303
+\cf0 	$ git remote add origin ssh://gityoann@jowamedia.synology.me:23/volume1/web/git/altage.git\
+\pard\pardeftab708\ri-386
+\cf0 \
+\
+
+\b R\'e9cup\'e9rer un projet GIT (dans Eclipse avec eGit)
+\b0 \
+\
+Utilisation de eGIT avec eclipse:\
+\pard\pardeftab708\ri-386
+{\field{\*\fldinst{HYPERLINK "http://wiki.eclipse.org/EGit/User_Guide"}}{\fldrslt \cf0 http://wiki.eclipse.org/EGit/User_Guide#Cloning_Remote_Repositories}}\
+\pard\pardeftab708\ri-386
+{\field{\*\fldinst{HYPERLINK "http://www.vogella.com/tutorials/EclipseGit/article.html"}}{\fldrslt \cf0 http://www.vogella.com/tutorials/EclipseGit/article.html}}\
+\
+\
+\pard\pardeftab708\ri-386
+
+\b\fs28 \cf0 Bootsrap Framework:
+\b0\fs24 \
+\
+Doc : wrapbootstrap: {\field{\*\fldinst{HYPERLINK "http://jowamedia.synology.me/wrapbootstrap/"}}{\fldrslt http://jowamedia.synology.me/wrapbootstrap/}}\
+\
+Si besoin de composant, utiliser les composants de ce framework.\
+\
+\
+
+\b\fs28 Symfony FrameWork:
+\b0\fs24 \
+\pard\pardeftab708\ri-386
+
+\b \cf0 Authentifier quelqu'un \'e0 travers une base de donn\'e9es:
+\b0 \
+\
+Voir version en anglais plus compl\'e8te:\
+Tuto: {\field{\*\fldinst{HYPERLINK "http://symfony.com/fr/doc/current/cookbook/security/entity_provider.html#authentifier-quelqu-un-a-travers-une-base-de-donnees"}}{\fldrslt http://symfony.com/fr/doc/current/cookbook/security/entity_provider.html#authentifier-quelqu-un-a-travers-une-base-de-donnees}}}
