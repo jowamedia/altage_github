@@ -22,6 +22,7 @@ security:
                 users:
                     user:  { password: 123456, roles: [ 'ROLE_SITE_USER' ] }
                     admin: { password: 123456, roles: [ 'ROLE_ADMIN' ] }
+                    y.buhler: { password: 123456, roles: [ 'ROLE_ADMIN' ] }
                     
     firewalls:
         login_firewall:
